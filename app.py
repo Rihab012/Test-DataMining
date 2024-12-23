@@ -1,4 +1,4 @@
-!pip install numpy pandas matplotlib plotly dash statsmodels scikit-learn arch yfinance requests
+pip install numpy pandas matplotlib plotly dash statsmodels scikit-learn arch yfinance requests
 import numpy as np
 import pandas as pd
 import plotly.express as px
