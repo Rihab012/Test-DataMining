@@ -9,13 +9,12 @@ from arch import arch_model
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import yfinance as yf
-import requests
 import plotly.graph_objs as go
 
 # Télécharger et charger les données une seule fois
 data = yf.download("AAPL", start="2010-01-01", end="2024-12-31")
-data.to_csv("C:\\Users\\user\\Desktop\\apple_stock.csv")
-data = pd.read_csv("C:\\Users\\user\\Desktop\\apple_stock.csv", skiprows=2)
+data.to_csv("apple_stock.csv")
+data = pd.read_csv("apple_stock.csv", skiprows=2)
 data.columns = ['Date', 'Adj Close', 'Close', 'High', 'Low', 'Open', 'Volume']
 data['Date'] = pd.to_datetime(data['Date'])
 data = data.dropna()
