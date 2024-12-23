@@ -37,6 +37,7 @@ lr_model.fit(X_train, y_train)
 
 # Application Dash
 app = dash.Dash(__name__)
+
 app.layout = html.Div([
     dcc.DatePickerRange(
         id='date-picker-range',
@@ -93,4 +94,5 @@ def update_real_time_graph(n_intervals):
 
 if __name__ == "__main__":
     from waitress import serve
+    # Lancer l'application avec Waitress pour le développement local
     serve(app.server, host="0.0.0.0", port=8000)
