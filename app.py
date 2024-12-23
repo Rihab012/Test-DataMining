@@ -11,6 +11,7 @@ from sklearn.linear_model import LinearRegression
 import yfinance as yf
 import requests
 import plotly.graph_objs as go
+from waitress import serve
 
 # Télécharger et charger les données une seule fois
 data = yf.download("AAPL", start="2010-01-01", end="2024-12-31")
@@ -93,6 +94,5 @@ def update_real_time_graph(n_intervals):
     return figure
 
 if __name__ == "__main__":
-    from waitress import serve
     # Lancer l'application avec Waitress pour le développement local
     serve(app.server, host="0.0.0.0", port=8000)
