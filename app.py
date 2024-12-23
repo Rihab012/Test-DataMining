@@ -11,7 +11,7 @@ from sklearn.linear_model import LinearRegression
 import yfinance as yf
 import requests
 import plotly.graph_objs as go
-from waitress import serve
+from flask import Flask
 
 # Télécharger et charger les données une seule fois
 data = yf.download("AAPL", start="2010-01-01", end="2024-12-31")
@@ -37,7 +37,7 @@ lr_model = LinearRegression()
 lr_model.fit(X_train, y_train)
 
 # Application Dash
-app = dash.Dash(__name__)
+app = Flask(__name__)
 
 app.layout = html.Div([
     dcc.DatePickerRange(
@@ -92,7 +92,3 @@ def update_real_time_graph(n_intervals):
         )
     }
     return figure
-
-if __name__ == "__main__":
-    # Lancer l'application avec Waitress pour le développement local
-    serve(app.server, host="0.0.0.0", port=8000)
