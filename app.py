@@ -14,6 +14,8 @@ import requests
 import plotly.graph_objs as go
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, mean_absolute_error
+import os
+from dash import Dash
 # Télécharger les données boursières d'Apple via yFinance
 data = yf.download("AAPL", start="2010-01-01", end="2024-12-01")
 data.to_csv("C:\\Users\\user\\Desktop\\apple_stock.csv")  # Sauvegarder les données dans un fichier CSV
@@ -172,4 +174,7 @@ def update_volatility_graph(n):
     return fig_volatility
 # Lancer l'application
 if __name__ == '__main__':
+    # Utilise le port 10000 fourni par Render
+    port = int(os.environ.get("PORT", 10000))
+    app.run_server(host="0.0.0.0", port=port)
     app.run_server(debug=True)
