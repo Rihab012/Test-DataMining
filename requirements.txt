@@ -1,11 +1,10 @@
-dash
-plotly
-pandas
 numpy
-matplotlib
-yfinance
+pandas
+plotly
+dash
 statsmodels
 arch
 scikit-learn
+yfinance
 requests
-os
+gunicorn
