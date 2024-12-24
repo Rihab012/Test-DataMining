@@ -7,4 +7,6 @@ yfinance
 statsmodels
 arch
 scikit-learn
-gunicorn
+sklearn
+requests
+os
