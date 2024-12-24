@@ -2,6 +2,7 @@ dash
 plotly
 pandas
 numpy
+matplotlib
 yfinance
 statsmodels
 arch
