@@ -7,4 +7,5 @@ arch
 scikit-learn
 yfinance
 requests
+matplotlib
 gunicorn
